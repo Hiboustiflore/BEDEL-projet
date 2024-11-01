@@ -1,3 +1,6 @@
+/* [CORRECTION GPIO] 
+    Consider subdividing your project into separate modules. 
+(Don't hesitate to remove this comment)*/
 #![no_std]
 #![no_main]
 
@@ -6,6 +9,9 @@ use core::panic::PanicInfo;
 const DDRB: *mut u8 = 0x24 as *mut u8; // Data Direction Register for Port B
 const PORTB: *mut u8 = 0x25 as *mut u8; // Port B Data Register
 const PINB: *mut u8 = 0x23 as *mut u8;  // Port B Input Pins Address
+/* [CORRECTION GPIO] 
+    Any operations here will be limited to the I/O registers of port B
+(Don't hesitate to remove this comment)*/
 
 pub enum PinMode {
     Input,
